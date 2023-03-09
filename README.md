@@ -1,2 +1,3 @@
-# lc-aws-runtime
+# lc-aws-lambda
+
 LispCentral AWS Lambda Runtime Environment
