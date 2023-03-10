@@ -3,7 +3,7 @@
 cd `dirname $0`
 
 # build a VM.
-VM_NAME="cl-aws-buildenv"
+VM_NAME="ls-aws-lambda"
 docker build -t $VM_NAME .
 
 # make a zip file.
@@ -13,7 +13,7 @@ docker run --rm \
        $VM_NAME /out/build_bootstrap_in_vm.sh $ZIP_NAME
 
 # publish as a AWS custom function layer
-LAYER_NAME="lisp-layer"
+LAYER_NAME="lc-aws-lambda"
 aws lambda publish-layer-version \
     --zip-file fileb://build-bootstrap-out/$ZIP_NAME \
     --layer-name $LAYER_NAME
